@@ -15,9 +15,9 @@ public class SpringDataJpaApplication {
 		
 		EmployeeService empSer=ctx.getBean(EmployeeService.class);
 		
-	    List<String> k=empSer.getEmpUpperCase();
-	     
-	    System.out.println(k);
+	   System.out.println(empSer.getEmpBySalCriteria(50000));
+	    		 
+	    		 
 	    
 	   
 	}

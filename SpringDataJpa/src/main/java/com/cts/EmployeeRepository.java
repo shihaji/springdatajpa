@@ -21,4 +21,30 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
 	@Query("select upper(e.name) from Employee e")
 	public List<String> changeToUpperCase();
 	
+	
+	public Employee readByName(String name);
+	
+	public List<Employee> findByNameAndSalary(String name,int salary);
+	
+	public List<Employee> findByNameOrSalary(String name,int salary);
+	
+	public List<Employee> findBySalaryGreaterThan(int salary);
+	
+	public List<Employee> findBySalaryLessThan(int salary);
+	
+	public List<Employee> findBySalaryBetween(int start,int end);
+	
+	public List<Employee> findByNameLike(String p);
+	
+	public List<Employee> findByNameNotLike(String p);
+	
+	public List<Employee> findByOrderBySalaryAsc();
+	
+	public List<Employee> findBySalaryIn(List<Integer> list);
+	
+	public List<Employee> findBySalaryNotIn(List<Integer> list);
+	
+	public List<Employee> findByNameIsNull();
+	
+	public List<Employee> findByNameNotNull();
 }
